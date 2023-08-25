@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zacrac/constants.dart';
 import 'package:zacrac/routes.dart';
+import 'package:zacrac/widgets/custom_btn.dart';
 
 
 class SignIn extends StatelessWidget {
@@ -38,59 +39,16 @@ class SignIn extends StatelessWidget {
                 ],
               ),
             ),
-            child: SafeArea(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Image.asset('assets/text.png', height: 78,),
-                    const SizedBox(height: 60),
-                    TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        backgroundColor: AppColors.primary,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        minimumSize: const Size(312, 50),
-                      ),
-                      child: Text(
-                        'Sign up',
-                        style: GoogleFonts.interTextTheme()
-                            .labelLarge
-                            ?.copyWith(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w200),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    TextButton(
-                      onPressed: () =>
-                          Navigator.pushNamed(context, Screen.expenses.name),
-                      style: TextButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          side: const BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        minimumSize: const Size(312, 50),
-                      ),
-                      child: Text(
-                        'Login',
-                        style: GoogleFonts.interTextTheme()
-                            .labelLarge
-                            ?.copyWith(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w200),
-                      ),
-                    ),
-                    SizedBox(height: 0.03.sh,)
-                  ],
-                ),
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Image.asset('assets/text.png', height: 78,),
+                const SizedBox(height: 60),
+                CustomButton(text: 'Sign up', isOutlined: false, onTap: () {}),
+                const SizedBox(height: 20),
+                CustomButton(text: 'Login', isOutlined: true, onTap: () => Navigator.pushNamed(context, Screen.expenses.name)),
+                SizedBox(height: 0.03.sh,)
+              ],
             ),
           )
         ],
