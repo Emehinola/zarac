@@ -64,8 +64,9 @@ class _BillsState extends State<Bills> {
       decoration: BoxDecoration(
           border: Border.all(color: AppColors.neutralLight1),
           borderRadius: BorderRadius.circular(18),
+          color: Colors.white,
           boxShadow: const [
-             BoxShadow(
+            BoxShadow(
               color: Color.fromRGBO(0, 0, 0, .06),
               blurRadius: 40,
               spreadRadius: -10,

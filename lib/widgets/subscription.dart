@@ -93,7 +93,7 @@ class _SubscriptionState extends State<Subscription> {
                     (e) => Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12, ),
                       child: ListTile(
-                        contentPadding: EdgeInsets.zero,
+                        contentPadding: const EdgeInsets.symmetric(vertical: 5.0),
                         leading: Image.asset(e.picture, height: 36, width: 36,),
                         title: Text(e.name, style: TextStyle(fontSize: 14.sp),),
                         subtitle: Text(

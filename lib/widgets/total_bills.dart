@@ -15,9 +15,7 @@ class TotalBills extends StatefulWidget {
 }
 
 class _TotalBillsState extends State<TotalBills> {
-  double getPercentage(double value, double totalWidth) {
-    return (value / 100) * totalWidth;
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +24,7 @@ class _TotalBillsState extends State<TotalBills> {
       decoration: BoxDecoration(
           border: Border.all(color: AppColors.neutralLight1),
           borderRadius: BorderRadius.circular(18),
+          color: Colors.white,
           boxShadow: const [
             BoxShadow(
               color: Color.fromRGBO(0, 0, 0, .06),

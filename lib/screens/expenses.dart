@@ -15,10 +15,7 @@ class Expenses extends StatefulWidget {
 }
 
 class _ExpensesState extends State<Expenses> {
-  int monthlyBudget = 2550;
-  int remainder = 738;
-  int transport = 700;
-  int utilities = 320;
+
 
   @override
   Widget build(BuildContext context) {

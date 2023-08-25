@@ -5,8 +5,9 @@ import 'package:zacrac/paint/arc_one.dart';
 import '../constants.dart';
 import '../widgets/nav_bar.dart';
 
+
 class CreditScore extends StatelessWidget {
-  CreditScore({super.key});
+  const CreditScore({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,52 +60,55 @@ class Body extends StatelessWidget {
       required String score,
       required String meta,
     }) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                criteria,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.neutral,
-                    fontSize: 16.sp),
-              ),
-              const SizedBox(height: 5),
-              Text(
-                status,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                    color: status == "Good"
-                        ? AppColors.greenAccent
-                        : AppColors.orange),
-              ),
-            ],
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text(
-                score,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.neutral,
-                    fontSize: 16),
-              ),
-              const SizedBox(height: 5),
-              Text(
-                meta,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: status == "Good"
-                        ? AppColors.neutralLight4
-                        : AppColors.orange),
-              ),
-            ],
-          )
-        ],
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  criteria,
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.neutral,
+                      fontSize: 16.sp),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  status,
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: status == "Good"
+                          ? AppColors.greenAccent
+                          : AppColors.orange),
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  score,
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.neutral,
+                      fontSize: 16),
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  meta,
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: status == "Good"
+                          ? AppColors.neutralLight4
+                          : AppColors.orange),
+                ),
+              ],
+            )
+          ],
+        ),
       );
     }
 
@@ -153,12 +157,13 @@ class Body extends StatelessWidget {
           decoration: BoxDecoration(
               border: Border.all(color: AppColors.neutralLight1),
               borderRadius: BorderRadius.circular(18),
-              boxShadow: [
+              color: Colors.white,
+              boxShadow: const [
                 BoxShadow(
-                  color: Colors.white.withOpacity(0),
+                  color: Color.fromRGBO(0, 0, 0, .06),
                   blurRadius: 40,
                   spreadRadius: -10,
-                  offset: const Offset(0, 25),
+                  offset: Offset(0, 25),
                 )
               ]),
           child: Column(
